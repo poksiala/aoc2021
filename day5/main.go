@@ -60,31 +60,6 @@ func readInput() []line {
 	return lines
 }
 
-func sumNonNegatives(arr []int) int {
-	sum := 0
-	for _, n := range arr {
-		if n > 0 {
-			sum += n
-		}
-	}
-	return sum
-}
-
-func hasBingo(board []int) bool {
-	// return true if there is a row or column which has a product of -1
-	for i := 0; i < 5; i++ {
-		var a, b = 1, 1
-		for j := 0; j < 5; j++ {
-			a = a * board[i*5+j]
-			b = b * board[i+j*5]
-		}
-		if a == -1 || b == -1 {
-			return true
-		}
-	}
-	return false
-}
-
 func numRange(start int, end int) []int {
 	// inclusive range between start and end
 	delta := end - start
